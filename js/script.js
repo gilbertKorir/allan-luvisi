@@ -11,17 +11,38 @@ if (c != null) {
     document.getElementById("nae").innerHTML = c;
 }
 $(".main").fadeOut(1);
+
+// $('#play').click(function () {
+//     $(".loader").fadeOut(1500);
+//     $(".main").fadeIn("slow");
+//     sf.destroy();
+//     $('.balloon-border').animate({
+//         top: -500
+//     }, 8000);
+//     var audio = $('.song')[0];
+//     audio.play();
+
+// });
 $('#play').click(function () {
-    $(".loader").fadeOut(1500);
-    $(".main").fadeIn("slow");
+    $(".loader").fadeOut("slow");
     sf.destroy();
+
     $('.balloon-border').animate({
         top: -500
     }, 8000);
+
     var audio = $('.song')[0];
+    audio.currentTime = 0;   // start from beginning
     audio.play();
 
+    // STOP after 15 seconds
+    setTimeout(function () {
+        audio.pause();
+        audio.currentTime = 0; // reset so it doesn't continue in background
+    }, 15000);
 });
+
+
 var typed = new Typed("#typed", {
     stringsElement: '#typed-strings',
     typeSpeed: 30,
