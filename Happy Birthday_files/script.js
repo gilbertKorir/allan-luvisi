@@ -10,35 +10,35 @@ if (c != null) {
     document.getElementById("name").innerHTML = c;
     document.getElementById("nae").innerHTML = c;
 }
-$('#play').click(function () {
-    $(".loader").fadeOut("slow");
-    sf.destroy();
-    $('.balloon-border').animate({
-        top: -500
-    }, 8000);
-    var audio = $('.song')[0];
-    audio.play();
-
-});
-
 // $('#play').click(function () {
 //     $(".loader").fadeOut("slow");
 //     sf.destroy();
-
 //     $('.balloon-border').animate({
 //         top: -500
 //     }, 8000);
-
 //     var audio = $('.song')[0];
-//     audio.currentTime = 0; // start from beginning
 //     audio.play();
 
-//     // ⏱ Stop after 15 seconds
-//     setTimeout(function () {
-//         audio.pause();
-//         audio.currentTime = 0; // optional: reset
-//     }, 15000);
 // });
+
+$('#play').click(function () {
+    $(".loader").fadeOut("slow");
+    sf.destroy();
+
+    $('.balloon-border').animate({
+        top: -500
+    }, 8000);
+
+    var audio = $('.song')[0];
+    audio.currentTime = 0; // start from beginning
+    audio.play();
+
+    // ⏱ Stop after 15 seconds
+    setTimeout(function () {
+        audio.pause();
+        audio.currentTime = 0; // optional: reset
+    }, 15000);
+});
 
 var typed = new Typed("#typed", {
     stringsElement: '#typed-strings',
