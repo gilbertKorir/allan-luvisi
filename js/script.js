@@ -27,7 +27,7 @@ $('#play').click(function () {
     setTimeout(function () {
         audio.pause();
         audio.currentTime = 0; // reset so it doesn't continue in background
-    }, 15000);
+    }, 30000);
 });
 
 // $('#play').click(function () {
